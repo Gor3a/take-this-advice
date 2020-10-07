@@ -24,10 +24,12 @@ class App extends Component {
       .get(this.unsplashRandomCity)
       .then((res) => {
         let background = res.data.urls.regular;
-        background = `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(${background})`;
         this.setState({ background });
       })
-      .catch((err) => console.log("."));
+      .catch((err) => {
+        let background = `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.cnn.com/cnnnext/dam/assets/190910120101-04-shopping-cities-photos.jpg)`;
+        this.setState({ background });
+      });
   };
 
   render() {
