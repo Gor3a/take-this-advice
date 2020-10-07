@@ -17,6 +17,7 @@ class App extends Component {
 
   fetchAdvice = () => {
     axios.get("https://api.adviceslip.com/advice").then((res) => {
+      console.log(res.data)
       const { advice } = res.data.slip;
       this.setState({ advice });
     });
